@@ -7,7 +7,7 @@ This list focuses on tightly coupled CPU-GPU systems and rack-scale superchip pl
 ## Contents
 
 - [Why Superchips?](#why-superchips)
-- [Direct GH200 / GB200 Papers](#direct-gh200--gb200-papers)
+- [GH200 / GB200 Performance and Optimization](#gh200--gb200-performance-and-optimization)
 - [AI Systems on Superchips](#ai-systems-on-superchips)
 - [Memory, Data Movement, and Performance Models](#memory-data-movement-and-performance-models)
 - [Power, Energy, Cooling, and Rack-Scale Systems](#power-energy-cooling-and-rack-scale-systems)
@@ -15,15 +15,13 @@ This list focuses on tightly coupled CPU-GPU systems and rack-scale superchip pl
 
 ## Why Superchips?
 
-Superchips target workloads where performance is limited by data movement, memory capacity, and system integration, not only GPU FLOPs.
+Superchips address a growing systems bottleneck in AI and HPC: performance is increasingly constrained by memory capacity, data movement, CPU-GPU coordination, and power density, not only by accelerator peak FLOPs. NVIDIA's GH200 and GB200 designs integrate Grace CPUs with Hopper or Blackwell GPUs through high-bandwidth, coherent NVLink-C2C, making CPU memory, GPU memory, and CPU-side orchestration part of a more tightly coupled execution environment.
 
-- **Versus PCIe GPU servers:** GH200/GB200 use tighter CPU-GPU coupling and coherent memory instead of treating the GPU as a more distant accelerator.
-- **Versus HGX/SXM GPU servers:** GPU-GPU bandwidth is still critical, but superchips also make CPU memory and CPU orchestration closer to the accelerator path.
-- **Why NVIDIA is adopting this design:** larger effective memory, lower CPU-GPU transfer overhead, better heterogeneous CPU-GPU execution, denser rack-scale NVLink systems, and improved power/cooling efficiency.
-- **What becomes harder:** memory placement, NUMA/CDMM policy, page migration, runtime scheduling, isolation, and power management.
-- **Why these papers matter:** they show when superchip coherence helps, when it hurts, and how systems should be optimized around it.
+This architectural shift creates new opportunities and new system-software challenges. Superchips can reduce CPU-GPU transfer overhead, increase effective memory capacity, support finer-grained heterogeneous execution, and enable denser rack-scale NVLink systems. At the same time, they make memory placement, NUMA/CDMM policy, page migration, scheduling, isolation, power management, and cooling first-order optimization problems.
 
-## Direct GH200 / GB200 Papers
+This repository collects papers that study those tradeoffs and show how applications, runtimes, libraries, and system software should be redesigned for superchip-based platforms.
+
+## GH200 / GB200 Performance and Optimization
 
 | Year | Paper | Venue | Platform | Notes |
 | --- | --- | --- | --- | --- |
