@@ -7,10 +7,10 @@ This list focuses on tightly coupled CPU-GPU systems and rack-scale superchip pl
 ## Contents
 
 - [Why Superchips?](#why-superchips)
-- [Evaluation and Study](#evaluation-and-study)
 - [AI Systems on Superchips](#ai-systems-on-superchips)
 - [Memory, Data Movement, and Performance Models](#memory-data-movement-and-performance-models)
 - [Power, Energy, Cooling, and Rack-Scale Systems](#power-energy-cooling-and-rack-scale-systems)
+- [Evaluation and Study](#evaluation-and-study)
 - [Architecture and Technical References](#architecture-and-technical-references)
 
 ## Why Superchips?
@@ -20,17 +20,6 @@ Superchips address a core AI/HPC systems bottleneck: performance is increasingly
 This design can reduce transfer overhead, expand effective memory capacity, support fine-grained heterogeneous execution, and enable dense rack-scale NVLink systems. It also introduces new challenges in memory placement, NUMA/CDMM policy, page migration, scheduling, isolation, power management, and cooling.
 
 This repository tracks papers that evaluate these tradeoffs and optimize software for superchip platforms.
-
-## Evaluation and Study
-
-| Year | Paper | Venue | Platform | Notes |
-| --- | --- | --- | --- | --- |
-| 2024 | [Harnessing Integrated CPU-GPU System Memory for HPC: a first look into Grace Hopper](https://arxiv.org/abs/2407.07850) | ICPP 2024 | GH200 | System-allocated memory, managed memory, first-touch, page migration, and memory oversubscription. |
-| 2024 | [Understanding Data Movement in Tightly Coupled Heterogeneous Systems: A Case Study with the Grace Hopper Superchip](https://arxiv.org/abs/2408.11556) | arXiv | Quad GH200 | Intra-node and inter-node memory operations, memory placement, and communication behavior on Alps. |
-| 2024 | [Automatic BLAS Offloading on Unified Memory Architecture: A Study on NVIDIA Grace-Hopper](https://arxiv.org/abs/2404.13195) | PEARC 2024 | GH200 | Runtime BLAS interception and GPU offload using coherent CPU-GPU memory. |
-| 2024 | [Preliminary Performance Evaluation of Grace-Hopper GH200](https://doi.org/10.1109/CLUSTERWorkshops61563.2024.00050) | CLUSTER Workshops 2024 | GH200 | Early performance evaluation against H100 plus Sapphire Rapids systems. |
-| 2025 | [GPU-CPU Shared Memory Performance Analysis on NVIDIA GH200](https://doi.org/10.1109/CLUSTERWorkshops65972.2025.11164213) | CLUSTER Workshops 2025 | GH200 | Shared-memory behavior under CUDA Unified Memory and NVLink-C2C. |
-| 2026 | [An Engineering Journey Training Large Language Models at Scale on Alps: The Apertus Experience](https://arxiv.org/abs/2604.12973) | arXiv | GH200 | Operational lessons from training a 70B open model on the Alps GH200 supercomputer. |
 
 ## AI Systems on Superchips
 
@@ -61,6 +50,17 @@ This repository tracks papers that evaluate these tradeoffs and optimize softwar
 | 2026 | [Power-Capping Metric Evaluation for Improving Energy Efficiency in HPC Applications](https://impact.ornl.gov/en/publications/power-capping-metric-evaluation-forimproving-energy-efficiency-in/) | ISC Workshops 2025 revised papers | GH200 | Runtime power-capping metrics for energy efficiency, including LSMS on GH200. |
 | 2026 | [Cross-Layer Energy Analysis of Multimodal Training on Grace Hopper Superchips](https://arxiv.org/abs/2605.01938) | arXiv | GH200 | Energy/performance tradeoffs for multimodal training with offloading, sequence parallelism, and hardware-aware scheduling. |
 | 2026 | [Generative Design for Direct-to-Chip Liquid Cooling for Data Centers](https://arxiv.org/abs/2604.10941) | arXiv | GB200 | Cold-plate channel design for GB200 Grace Blackwell thermal optimization. |
+
+## Evaluation and Study
+
+| Year | Paper | Venue | Platform | Notes |
+| --- | --- | --- | --- | --- |
+| 2024 | [Harnessing Integrated CPU-GPU System Memory for HPC: a first look into Grace Hopper](https://arxiv.org/abs/2407.07850) | ICPP 2024 | GH200 | System-allocated memory, managed memory, first-touch, page migration, and memory oversubscription. |
+| 2024 | [Understanding Data Movement in Tightly Coupled Heterogeneous Systems: A Case Study with the Grace Hopper Superchip](https://arxiv.org/abs/2408.11556) | arXiv | Quad GH200 | Intra-node and inter-node memory operations, memory placement, and communication behavior on Alps. |
+| 2024 | [Automatic BLAS Offloading on Unified Memory Architecture: A Study on NVIDIA Grace-Hopper](https://arxiv.org/abs/2404.13195) | PEARC 2024 | GH200 | Runtime BLAS interception and GPU offload using coherent CPU-GPU memory. |
+| 2024 | [Preliminary Performance Evaluation of Grace-Hopper GH200](https://doi.org/10.1109/CLUSTERWorkshops61563.2024.00050) | CLUSTER Workshops 2024 | GH200 | Early performance evaluation against H100 plus Sapphire Rapids systems. |
+| 2025 | [GPU-CPU Shared Memory Performance Analysis on NVIDIA GH200](https://doi.org/10.1109/CLUSTERWorkshops65972.2025.11164213) | CLUSTER Workshops 2025 | GH200 | Shared-memory behavior under CUDA Unified Memory and NVLink-C2C. |
+| 2026 | [An Engineering Journey Training Large Language Models at Scale on Alps: The Apertus Experience](https://arxiv.org/abs/2604.12973) | arXiv | GH200 | Operational lessons from training a 70B open model on the Alps GH200 supercomputer. |
 
 ## Architecture and Technical References
 
