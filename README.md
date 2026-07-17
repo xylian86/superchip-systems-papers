@@ -4,11 +4,6 @@ Curated papers on system optimization for Superchips, including NVIDIA GH200, GB
 
 This list focuses on tightly coupled CPU-GPU systems and rack-scale superchip platforms where system software, memory placement, data movement, power management, cooling, and workload scheduling materially affect performance.
 
-## Scope
-
-- NVIDIA GH200 Grace Hopper, GH200 NVL2, GB200 Grace Blackwell, GB200 NVL72, GB300, and future NVIDIA superchip systems
-- Topics: unified/coherent memory, system-allocated memory, NUMA/CDMM placement, offloading, LLM serving/training, HPC kernels, communication, power, energy, thermal, and rack-scale design
-
 ## Contents
 
 - [Why Superchips?](#why-superchips)
