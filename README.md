@@ -15,11 +15,11 @@ This list focuses on tightly coupled CPU-GPU systems and rack-scale superchip pl
 
 ## Why Superchips?
 
-Superchips address a growing systems bottleneck in AI and HPC: performance is increasingly constrained by memory capacity, data movement, CPU-GPU coordination, and power density, not only by accelerator peak FLOPs. NVIDIA's GH200 and GB200 designs integrate Grace CPUs with Hopper or Blackwell GPUs through high-bandwidth, coherent NVLink-C2C, making CPU memory, GPU memory, and CPU-side orchestration part of a more tightly coupled execution environment.
+Superchips address a core AI/HPC systems bottleneck: performance is increasingly limited by memory capacity, data movement, CPU-GPU coordination, and power density, not only accelerator FLOPs. NVIDIA GH200 and GB200 integrate Grace CPUs with Hopper or Blackwell GPUs over coherent NVLink-C2C, bringing CPU memory, GPU memory, and orchestration into a tightly coupled execution model.
 
-This architectural shift creates new opportunities and new system-software challenges. Superchips can reduce CPU-GPU transfer overhead, increase effective memory capacity, support finer-grained heterogeneous execution, and enable denser rack-scale NVLink systems. At the same time, they make memory placement, NUMA/CDMM policy, page migration, scheduling, isolation, power management, and cooling first-order optimization problems.
+This design can reduce transfer overhead, expand effective memory capacity, support fine-grained heterogeneous execution, and enable dense rack-scale NVLink systems. It also introduces new challenges in memory placement, NUMA/CDMM policy, page migration, scheduling, isolation, power management, and cooling.
 
-This repository collects papers that study those tradeoffs and show how applications, runtimes, libraries, and system software should be redesigned for superchip-based platforms.
+This repository tracks papers that evaluate these tradeoffs and optimize software for superchip platforms.
 
 ## Evaluation and Study
 
