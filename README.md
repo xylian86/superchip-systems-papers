@@ -7,7 +7,7 @@ This list focuses on tightly coupled CPU-GPU systems and rack-scale superchip pl
 ## Contents
 
 - [Why Superchips?](#why-superchips)
-- [GH200 / GB200 Performance and Optimization](#gh200--gb200-performance-and-optimization)
+- [GH200 / GB200 System Evaluation and Optimization](#gh200--gb200-system-evaluation-and-optimization)
 - [AI Systems on Superchips](#ai-systems-on-superchips)
 - [Memory, Data Movement, and Performance Models](#memory-data-movement-and-performance-models)
 - [Power, Energy, Cooling, and Rack-Scale Systems](#power-energy-cooling-and-rack-scale-systems)
@@ -21,7 +21,7 @@ This architectural shift creates new opportunities and new system-software chall
 
 This repository collects papers that study those tradeoffs and show how applications, runtimes, libraries, and system software should be redesigned for superchip-based platforms.
 
-## GH200 / GB200 Performance and Optimization
+## GH200 / GB200 System Evaluation and Optimization
 
 | Year | Paper | Venue | Platform | Notes |
 | --- | --- | --- | --- | --- |
