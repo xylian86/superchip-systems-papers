@@ -46,22 +46,29 @@ Superchips target workloads where performance is limited by data movement, memor
 | Year | Paper | Venue | Platform | Notes |
 | --- | --- | --- | --- | --- |
 | 2025 | [Characterizing and Optimizing LLM Inference Workloads on CPU-GPU Coupled Architectures](https://arxiv.org/abs/2504.11750) | ISPASS 2025 | GH200, A100, H100 | Fine-grained LLM inference tracing; analyzes CPU-bound and GPU-bound regions on closely coupled GH200. |
-| 2025 | [SuperOffload: Unleashing the Power of Large-Scale LLM Training on Superchips](https://arxiv.org/abs/2509.21271) | ASPLOS 2026 | GH200 | Superchip-centric LLM training offload using Hopper GPU, Grace CPU, and NVLink-C2C. |
+| 2026 | [SuperOffload: Unleashing the Power of Large-Scale LLM Training on Superchips](https://arxiv.org/abs/2509.21271) | ASPLOS 2026 | GH200 | Superchip-centric LLM training offload using Hopper GPU, Grace CPU, and NVLink-C2C. |
 | 2026 | [SuperInfer: SLO-Aware Rotary Scheduling and Memory Management for LLM Inference on Superchips](https://arxiv.org/abs/2601.20309) | MLSys 2026 | GH200 | KV-cache scheduling and full-duplex CPU-GPU transfer for latency SLOs. |
 | 2026 | [No Buffer, No Bottleneck: Efficient Zero-Copy KV Cache Offloading for Long-Context LLMs](https://www.usenix.org/conference/osdi26/presentation/luo) | OSDI 2026 | GH200, GB200 | DirectKV enables GPU kernels to directly access CPU-resident KV cache over NVLink-C2C. |
+| 2026 | [C2CServe: Leveraging NVLink-C2C for Elastic Serverless LLM Serving on MIG](https://arxiv.org/abs/2605.19481) | arXiv | GH200, GB200 | Serverless LLM serving with CPU-resident weights streamed to MIG instances over NVLink-C2C. |
+| 2026 | [MegaTrain: Full Precision Training of 100B+ Parameter Large Language Models on a Single GPU](https://arxiv.org/abs/2604.05091) | arXiv | H200, GH200 | Host-memory-centric LLM training; includes long-context training on a single GH200. |
+| 2026 | [An Engineering Journey Training Large Language Models at Scale on Alps: The Apertus Experience](https://arxiv.org/abs/2604.12973) | arXiv | GH200 | Operational lessons from training a 70B open model on the Alps GH200 supercomputer. |
 | 2026 | [Cross-Layer Energy Analysis of Multimodal Training on Grace Hopper Superchips](https://arxiv.org/abs/2605.01938) | arXiv | GH200 | Energy/performance tradeoffs for multimodal training with offloading, sequence parallelism, and hardware-aware scheduling. |
 
 ## Memory, Data Movement, and Performance Models
 
 | Year | Paper | Venue | Platform | Notes |
 | --- | --- | --- | --- | --- |
+| 2025 | [Towards Memory Disaggregation via NVLink C2C: Benchmarking CPU-Requested GPU Memory Access](https://doi.org/10.1145/3723851.3723853) | HCDS 2025 | GH200 | Benchmarks Grace CPU access to GPU memory over NVLink-C2C for memory expansion. |
 | 2025 | [Roofline Analysis of Tightly-Coupled CPU-GPU Superchips: A Study on MI300A and GH200](https://escholarship.org/uc/item/3zr637h8) | SC Workshops 2025 / P3HPC | GH200, MI300A | Extends roofline analysis to CPU-GPU contention, memory allocator effects, and arithmetic intensity. [DOI](https://doi.org/10.1145/3731599.3767497). |
 | 2025 | [ARMing GPUs: On the Memory Subsystem of Grace Hopper GH200](https://sc25.conference-program.com/presentation/?id=misc131&sess=sess222) | SC25 HMEM invited talk | Quad GH200 | Memory subsystem characterization talk connected to the GH200 data-movement study. |
+| 2026 | [Consistency and Coherence of the NVIDIA Grace-Hopper Superchip](https://doi.org/10.1145/3814942.3816134) | ISMM 2026 | GH200 | Empirical CPU-GPU consistency and coherence characterization for shared-memory software. |
+| 2026 | [Taming GPU Underutilization via Static Partitioning and Fine-grained CPU Offloading](https://arxiv.org/abs/2604.08451) | ISC 2026 | GH200 | MIG resource sharing and memory offloading over cache-coherent NVLink-C2C. |
 
 ## Power, Energy, Cooling, and Rack-Scale Systems
 
 | Year | Paper / Resource | Venue | Platform | Notes |
 | --- | --- | --- | --- | --- |
+| 2025 | [Preliminary Study on Fine-Grained Power and Energy Measurements on Grace Hopper GH200 with Open-Source Performance Tools](https://doi.org/10.1145/3703001.3724383) | HPC Asia 2025 Workshops | GH200 | Fine-grained GH200 power/energy profiling with hwmon, PAPI, and Score-P. |
 | 2025 | [Alps, a versatile research infrastructure](https://doi.org/10.1145/3757348.3757365) | CUG 2025 | GH200, MI300A, A100 | System paper for the Alps supercomputer, including large-scale GH200 deployment context. |
 | 2026 | [Power-Capping Metric Evaluation for Improving Energy Efficiency in HPC Applications](https://impact.ornl.gov/en/publications/power-capping-metric-evaluation-forimproving-energy-efficiency-in/) | ISC Workshops 2025 revised papers | GH200 | Runtime power-capping metrics for energy efficiency, including LSMS on GH200. |
 | 2026 | [Generative Design for Direct-to-Chip Liquid Cooling for Data Centers](https://arxiv.org/abs/2604.10941) | arXiv | GB200 | Cold-plate channel design for GB200 Grace Blackwell thermal optimization. |
@@ -91,6 +98,6 @@ Good candidate topics include:
 
 - GH200 / GB200 memory allocation, NUMA, CDMM, page migration, and system-allocated memory
 - LLM inference/training systems that exploit NVLink-C2C or coherent CPU-GPU memory
-- HPC application optimization on GH200, GB200, or MI300A-like tightly coupled systems
+- HPC application optimization on GH200, GB200, or future NVIDIA superchip systems
 - Power capping, power steering, energy modeling, and thermal design for superchip racks
 - Communication libraries, collectives, and multi-node scaling on GH200 or GB200 clusters
