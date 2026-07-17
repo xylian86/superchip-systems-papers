@@ -22,28 +22,13 @@ This list focuses on tightly coupled CPU-GPU systems and rack-scale superchip pl
 
 ## Why Superchips?
 
-NVIDIA's superchip direction is a response to a systems problem: modern AI and HPC workloads are often limited by memory capacity, memory placement, CPU-GPU synchronization, GPU-GPU communication, and power/cooling density rather than raw FLOPs alone. Superchips move more of the system boundary into a tightly coupled CPU-GPU module, then extend that idea to rack-scale NVLink domains.
+Superchips target workloads where performance is limited by data movement, memory capacity, and system integration, not only GPU FLOPs.
 
-### How Superchips Differ from Other Designs
-
-| Design | Examples | CPU-GPU relationship | Memory and communication model | What it is good at | Main system challenge |
-| --- | --- | --- | --- | --- | --- |
-| CPU-only server | x86 or Arm CPU node | No accelerator path | Coherent CPU memory only | Control-heavy, memory-rich, serial, and latency-sensitive work | Lower throughput and energy efficiency for dense AI/HPC kernels |
-| PCIe-attached GPU server | x86/Arm host + PCIe GPUs | GPU is a discrete accelerator behind PCIe | CPU DRAM and GPU HBM are mostly separate; software relies on explicit copies, Unified Memory, or HMM | Flexible deployment and broad compatibility | PCIe bandwidth/latency, page migration, and CPU-GPU synchronization overhead |
-| HGX / SXM GPU server | DGX/HGX H100 or B200 | GPUs are tightly connected to each other; CPU remains less tightly coupled | High GPU-GPU NVLink bandwidth, but CPU memory is not a first-class high-bandwidth GPU memory tier | Dense GPU training and GPU-heavy HPC | CPU-side orchestration and host-memory access can still become bottlenecks |
-| Superchip | GH200, GB200 | Grace CPU and GPU(s) are connected in one coherent module through NVLink-C2C | CPU and GPU can directly address each other's memory; NUMA/CDMM policy becomes a first-order tuning issue | Mixed CPU-GPU workflows, larger working sets, memory oversubscription, and fine-grained CPU-GPU cooperation | New placement, migration, isolation, and runtime scheduling problems |
-| Rack-scale superchip system | GB200 NVL72 | Many superchips are connected as a high-bandwidth NVLink domain | Rack-scale GPU communication and unified memory capacity through NVLink Switch | Trillion-parameter model training/inference, large simulation, and dense multi-GPU services | Power, cooling, collectives, placement, and multi-tenant scheduling at rack scale |
-
-### Why NVIDIA Is Adopting Superchip Designs
-
-- Reduce CPU-GPU data movement overhead: GH200 connects Grace and Hopper with coherent NVLink-C2C, giving the CPU and GPU a much faster and more coherent path than a conventional PCIe-attached accelerator design.
-- Increase effective memory capacity: Grace LPDDR memory can act as a high-bandwidth memory tier that the GPU can directly address, helping workloads that exceed HBM capacity.
-- Improve programmability for heterogeneous workloads: hardware coherence lets CPU and GPU threads share system-allocated memory more naturally, reducing the amount of manual data-copy code.
-- Keep accelerators fed: tighter CPU-GPU coupling helps workloads with serial control logic, preprocessing, graph traversal, recommendation, database, sparse, or irregular phases that do not run entirely inside dense GPU kernels.
-- Scale communication within the rack: GB200 NVL72 extends the superchip idea into a 72-GPU NVLink domain, reducing the communication penalty for model-parallel AI and tightly coupled HPC.
-- Improve energy and density: moving data through shorter, higher-bandwidth links and designing the rack around liquid cooling and dense NVLink cabling makes the platform more viable for high-power AI factories and supercomputers.
-
-For this repo, the most interesting papers are the ones that expose the tradeoffs behind those bullets: when coherent memory helps, when it hurts, how memory should be placed, which workloads become CPU-bound, how to schedule CPU-GPU transfers, and how power/cooling constraints affect full-system performance.
+- **Versus PCIe GPU servers:** GH200/GB200 use tighter CPU-GPU coupling and coherent memory instead of treating the GPU as a more distant accelerator.
+- **Versus HGX/SXM GPU servers:** GPU-GPU bandwidth is still critical, but superchips also make CPU memory and CPU orchestration closer to the accelerator path.
+- **Why NVIDIA is adopting this design:** larger effective memory, lower CPU-GPU transfer overhead, better heterogeneous CPU-GPU execution, denser rack-scale NVLink systems, and improved power/cooling efficiency.
+- **What becomes harder:** memory placement, NUMA/CDMM policy, page migration, runtime scheduling, isolation, and power management.
+- **Why these papers matter:** they show when superchip coherence helps, when it hurts, and how systems should be optimized around it.
 
 ## Direct GH200 / GB200 Papers
 
