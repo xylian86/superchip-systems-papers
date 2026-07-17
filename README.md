@@ -7,7 +7,6 @@ This list focuses on tightly coupled CPU-GPU systems and rack-scale superchip pl
 ## Scope
 
 - NVIDIA GH200 Grace Hopper, GH200 NVL2, GB200 Grace Blackwell, GB200 NVL72, GB300, and future NVIDIA superchip systems
-- Closely related integrated CPU-GPU platforms such as AMD MI300A when the paper helps compare design tradeoffs
 - Topics: unified/coherent memory, system-allocated memory, NUMA/CDMM placement, offloading, LLM serving/training, HPC kernels, communication, power, energy, thermal, and rack-scale design
 
 ## Contents
