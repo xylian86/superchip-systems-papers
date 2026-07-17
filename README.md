@@ -7,7 +7,7 @@ This list focuses on tightly coupled CPU-GPU systems and rack-scale superchip pl
 ## Contents
 
 - [Why Superchips?](#why-superchips)
-- [GH200 / GB200 System Evaluation and Optimization](#gh200--gb200-system-evaluation-and-optimization)
+- [Evaluation and Study](#evaluation-and-study)
 - [AI Systems on Superchips](#ai-systems-on-superchips)
 - [Memory, Data Movement, and Performance Models](#memory-data-movement-and-performance-models)
 - [Power, Energy, Cooling, and Rack-Scale Systems](#power-energy-cooling-and-rack-scale-systems)
@@ -21,7 +21,7 @@ This architectural shift creates new opportunities and new system-software chall
 
 This repository collects papers that study those tradeoffs and show how applications, runtimes, libraries, and system software should be redesigned for superchip-based platforms.
 
-## GH200 / GB200 System Evaluation and Optimization
+## Evaluation and Study
 
 | Year | Paper | Venue | Platform | Notes |
 | --- | --- | --- | --- | --- |
@@ -30,9 +30,6 @@ This repository collects papers that study those tradeoffs and show how applicat
 | 2024 | [Automatic BLAS Offloading on Unified Memory Architecture: A Study on NVIDIA Grace-Hopper](https://arxiv.org/abs/2404.13195) | PEARC 2024 | GH200 | Runtime BLAS interception and GPU offload using coherent CPU-GPU memory. |
 | 2024 | [Preliminary Performance Evaluation of Grace-Hopper GH200](https://doi.org/10.1109/CLUSTERWorkshops61563.2024.00050) | CLUSTER Workshops 2024 | GH200 | Early performance evaluation against H100 plus Sapphire Rapids systems. |
 | 2025 | [GPU-CPU Shared Memory Performance Analysis on NVIDIA GH200](https://doi.org/10.1109/CLUSTERWorkshops65972.2025.11164213) | CLUSTER Workshops 2025 | GH200 | Shared-memory behavior under CUDA Unified Memory and NVLink-C2C. |
-| 2025 | [NVIDIA GH200 ni okeru System-Allocated Memory no seino hyoka](https://ipsj.ixsq.nii.ac.jp/records/2001770) | IPSJ HPC 2025 | GH200 | Japanese technical report on system-allocated memory performance on Miyabi-G. |
-| 2025 | [GH200 ni okeru denryoku seino saitekika](https://ipsj.ixsq.nii.ac.jp/records/2001771) | IPSJ HPC 2025 | GH200 | Japanese technical report on power/performance optimization on Miyabi-G and GH200 test systems. |
-| 2026 | [Accelerating High-Order Finite Element Simulations at Extreme Scale with FP64 Tensor Cores](https://arxiv.org/abs/2603.09038) | arXiv | GH200, GB200 | FP64 Tensor Core and kernel fusion optimizations for MFEM at exascale. |
 
 ## AI Systems on Superchips
 
