@@ -30,6 +30,7 @@ This repository tracks papers that evaluate these tradeoffs and optimize softwar
 | 2024 | [Automatic BLAS Offloading on Unified Memory Architecture: A Study on NVIDIA Grace-Hopper](https://arxiv.org/abs/2404.13195) | PEARC 2024 | GH200 | Runtime BLAS interception and GPU offload using coherent CPU-GPU memory. |
 | 2024 | [Preliminary Performance Evaluation of Grace-Hopper GH200](https://doi.org/10.1109/CLUSTERWorkshops61563.2024.00050) | CLUSTER Workshops 2024 | GH200 | Early performance evaluation against H100 plus Sapphire Rapids systems. |
 | 2025 | [GPU-CPU Shared Memory Performance Analysis on NVIDIA GH200](https://doi.org/10.1109/CLUSTERWorkshops65972.2025.11164213) | CLUSTER Workshops 2025 | GH200 | Shared-memory behavior under CUDA Unified Memory and NVLink-C2C. |
+| 2026 | [An Engineering Journey Training Large Language Models at Scale on Alps: The Apertus Experience](https://arxiv.org/abs/2604.12973) | arXiv | GH200 | Operational lessons from training a 70B open model on the Alps GH200 supercomputer. |
 
 ## AI Systems on Superchips
 
@@ -40,8 +41,6 @@ This repository tracks papers that evaluate these tradeoffs and optimize softwar
 | 2026 | [SuperInfer: SLO-Aware Rotary Scheduling and Memory Management for LLM Inference on Superchips](https://arxiv.org/abs/2601.20309) | MLSys 2026 | GH200 | KV-cache scheduling and full-duplex CPU-GPU transfer for latency SLOs. |
 | 2026 | [No Buffer, No Bottleneck: Efficient Zero-Copy KV Cache Offloading for Long-Context LLMs](https://www.usenix.org/conference/osdi26/presentation/luo) | OSDI 2026 | GH200, GB200 | DirectKV enables GPU kernels to directly access CPU-resident KV cache over NVLink-C2C. |
 | 2026 | [C2CServe: Leveraging NVLink-C2C for Elastic Serverless LLM Serving on MIG](https://arxiv.org/abs/2605.19481) | arXiv | GH200, GB200 | Serverless LLM serving with CPU-resident weights streamed to MIG instances over NVLink-C2C. |
-| 2026 | [An Engineering Journey Training Large Language Models at Scale on Alps: The Apertus Experience](https://arxiv.org/abs/2604.12973) | arXiv | GH200 | Operational lessons from training a 70B open model on the Alps GH200 supercomputer. |
-| 2026 | [Cross-Layer Energy Analysis of Multimodal Training on Grace Hopper Superchips](https://arxiv.org/abs/2605.01938) | arXiv | GH200 | Energy/performance tradeoffs for multimodal training with offloading, sequence parallelism, and hardware-aware scheduling. |
 
 ## Memory, Data Movement, and Performance Models
 
@@ -60,6 +59,7 @@ This repository tracks papers that evaluate these tradeoffs and optimize softwar
 | 2025 | [Preliminary Study on Fine-Grained Power and Energy Measurements on Grace Hopper GH200 with Open-Source Performance Tools](https://doi.org/10.1145/3703001.3724383) | HPC Asia 2025 Workshops | GH200 | Fine-grained GH200 power/energy profiling with hwmon, PAPI, and Score-P. |
 | 2025 | [Alps, a versatile research infrastructure](https://doi.org/10.1145/3757348.3757365) | CUG 2025 | GH200, MI300A, A100 | System paper for the Alps supercomputer, including large-scale GH200 deployment context. |
 | 2026 | [Power-Capping Metric Evaluation for Improving Energy Efficiency in HPC Applications](https://impact.ornl.gov/en/publications/power-capping-metric-evaluation-forimproving-energy-efficiency-in/) | ISC Workshops 2025 revised papers | GH200 | Runtime power-capping metrics for energy efficiency, including LSMS on GH200. |
+| 2026 | [Cross-Layer Energy Analysis of Multimodal Training on Grace Hopper Superchips](https://arxiv.org/abs/2605.01938) | arXiv | GH200 | Energy/performance tradeoffs for multimodal training with offloading, sequence parallelism, and hardware-aware scheduling. |
 | 2026 | [Generative Design for Direct-to-Chip Liquid Cooling for Data Centers](https://arxiv.org/abs/2604.10941) | arXiv | GB200 | Cold-plate channel design for GB200 Grace Blackwell thermal optimization. |
 
 ## Architecture and Technical References
