@@ -16,7 +16,6 @@ This list focuses on tightly coupled CPU-GPU systems and rack-scale superchip pl
 - [AI Systems on Superchips](#ai-systems-on-superchips)
 - [Memory, Data Movement, and Performance Models](#memory-data-movement-and-performance-models)
 - [Power, Energy, Cooling, and Rack-Scale Systems](#power-energy-cooling-and-rack-scale-systems)
-- [Adjacent Integrated CPU-GPU Systems](#adjacent-integrated-cpu-gpu-systems)
 - [Architecture and Technical References](#architecture-and-technical-references)
 
 ## Why Superchips?
@@ -49,6 +48,7 @@ Superchips target workloads where performance is limited by data movement, memor
 | 2025 | [Characterizing and Optimizing LLM Inference Workloads on CPU-GPU Coupled Architectures](https://arxiv.org/abs/2504.11750) | ISPASS 2025 | GH200, A100, H100 | Fine-grained LLM inference tracing; analyzes CPU-bound and GPU-bound regions on closely coupled GH200. |
 | 2025 | [SuperOffload: Unleashing the Power of Large-Scale LLM Training on Superchips](https://arxiv.org/abs/2509.21271) | ASPLOS 2026 | GH200 | Superchip-centric LLM training offload using Hopper GPU, Grace CPU, and NVLink-C2C. |
 | 2026 | [SuperInfer: SLO-Aware Rotary Scheduling and Memory Management for LLM Inference on Superchips](https://arxiv.org/abs/2601.20309) | MLSys 2026 | GH200 | KV-cache scheduling and full-duplex CPU-GPU transfer for latency SLOs. |
+| 2026 | [No Buffer, No Bottleneck: Efficient Zero-Copy KV Cache Offloading for Long-Context LLMs](https://www.usenix.org/conference/osdi26/presentation/luo) | OSDI 2026 | GH200, GB200 | DirectKV enables GPU kernels to directly access CPU-resident KV cache over NVLink-C2C. |
 | 2026 | [Cross-Layer Energy Analysis of Multimodal Training on Grace Hopper Superchips](https://arxiv.org/abs/2605.01938) | arXiv | GH200 | Energy/performance tradeoffs for multimodal training with offloading, sequence parallelism, and hardware-aware scheduling. |
 
 ## Memory, Data Movement, and Performance Models
@@ -65,13 +65,6 @@ Superchips target workloads where performance is limited by data movement, memor
 | 2025 | [Alps, a versatile research infrastructure](https://doi.org/10.1145/3757348.3757365) | CUG 2025 | GH200, MI300A, A100 | System paper for the Alps supercomputer, including large-scale GH200 deployment context. |
 | 2026 | [Power-Capping Metric Evaluation for Improving Energy Efficiency in HPC Applications](https://impact.ornl.gov/en/publications/power-capping-metric-evaluation-forimproving-energy-efficiency-in/) | ISC Workshops 2025 revised papers | GH200 | Runtime power-capping metrics for energy efficiency, including LSMS on GH200. |
 | 2026 | [Generative Design for Direct-to-Chip Liquid Cooling for Data Centers](https://arxiv.org/abs/2604.10941) | arXiv | GB200 | Cold-plate channel design for GB200 Grace Blackwell thermal optimization. |
-
-## Adjacent Integrated CPU-GPU Systems
-
-| Year | Paper | Venue | Platform | Notes |
-| --- | --- | --- | --- | --- |
-| 2026 | [Inter-APU Communication on AMD MI300A Systems via Infinity Fabric: A Deep Dive](https://doi.org/10.1145/3767110.3767130) | MEMSYS 2025 | MI300A | Useful comparison point for coherent multi-APU memory and communication design. |
-| 2026 | [Design and Implementation of Multi-Rail-Aware Hierarchical MPI Reduce-Scatter and Allgather Operations](https://doi.org/10.23919/ISC.2026.11520482) | ISC 2026 | GH200, H100, MI300A | Hierarchical collectives evaluated on Delta-AI GH200 and other accelerators. |
 
 ## Architecture and Technical References
 
